@@ -8,6 +8,62 @@
 
 :root {
   --dark-color: #010113;
+  --dedication-layer: 300;
+}
+
+.dedication {
+  position: absolute;
+  z-index: var(--dedication-layer);
+  top: clamp(40px, 15vh, 150px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 560px);
+  text-align: center;
+  color: #fff7df;
+  font-family: Georgia, "Times New Roman", serif;
+  text-shadow: 0 2px 12px #010113, 0 0 28px #010113;
+  pointer-events: none;
+}
+
+.dedication__name {
+  margin-bottom: 12px;
+  color: #f8df83;
+  font-size: clamp(38px, 7vw, 60px);
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.dedication h1 {
+  font-size: clamp(24px, 5.8vw, 38px);
+  font-weight: normal;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.dedication__message {
+  margin-top: 18px;
+  font-size: clamp(15px, 3.6vw, 19px);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.dedication__closing {
+  margin-top: 14px;
+  color: #f8df83;
+  font-size: 19px;
+  font-style: italic;
+}
+
+@media (max-height: 600px) {
+  .dedication { top: 24px; }
+  .dedication__name { font-size: 32px; margin-bottom: 6px; }
+  .dedication__message { margin-top: 10px; }
+  .dedication__closing { margin-top: 8px; }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .dedication { left: 25%; width: 44%; }
+  .flowers { left: 22%; }
 }
 
 body {
